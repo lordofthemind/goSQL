@@ -4,7 +4,6 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
-	"os"
 
 	"github.com/go-sql-driver/mysql"
 )
@@ -21,8 +20,10 @@ type Album struct {
 func main() {
 	// Capture connection properties.
 	cfg := mysql.Config{
-		User:   os.Getenv("MYSQL_DB_USERNAME"),
-		Passwd: os.Getenv("MYSQL_DB_PASSWORD"),
+		User:   "root",
+		Passwd: "keshavsql",
+		// User:   os.Getenv("MYSQL_DB_USERNAME"),
+		// Passwd: os.Getenv("MYSQL_DB_PASSWORD"),
 		Net:    "tcp",
 		Addr:   "127.0.0.1:3306",
 		DBName: "recordings",
@@ -40,18 +41,18 @@ func main() {
 	}
 	fmt.Println("Connected!")
 
-	albums, err := albumsByArtist("John Coltrane")
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Printf("Albums found: %v\n", albums)
+	// albums, err := albumsByArtist("John Coltrane")
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
+	// fmt.Printf("Albums found: %v\n", albums)
 
-	// Hard-code ID 2 here to test the query.
-	alb, err := albumByID(2)
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Printf("Album found: %v\n", alb)
+	// // Hard-code ID 2 here to test the query.
+	// alb, err := albumByID(2)
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
+	// fmt.Printf("Album found: %v\n", alb)
 }
 
 // albumsByArtist queries for albums that have the specified artist name.

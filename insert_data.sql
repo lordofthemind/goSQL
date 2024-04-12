@@ -1,11 +1,14 @@
 INSERT INTO album
   (title, artist, price)
 VALUES
+  ('Blue Train', 'John Coltrane', 56.99),
+  ('Giant Steps', 'John Coltrane', 63.99),
+  ('Jeru', 'Gerry Mulligan', 17.99),
+  ('Sarah Vaughan', 'Sarah Vaughan', 34.98),
   ('Kind of Blue', 'Miles Davis', 45.50),
   ('A Love Supreme', 'John Coltrane', 59.75),
   ('Take Five', 'Dave Brubeck', 27.45),
   ('My Favorite Things', 'John Coltrane', 50.25),
-  -- Additional Rows
   ('Some Album', 'Some Artist', 19.99),
   ('Another Album', 'Another Artist', 29.99),
   ('Random Jazz', 'Random Artist', 22.75),
